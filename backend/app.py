@@ -174,13 +174,13 @@ def create_app(test_config=None):
         data = request.json
 
         # get movie with spesific <id>
-        movie = Movies.query.get(movie_id)
-        if not movie:
-            abort(404)
 
         title = data.get("title", None)
         release_date = data.get("release_date", None)
         try:
+            movie = Movies.query.get(movie_id)
+            if not movie:
+                abort(404)
             if title:
                 movie.title = title
             if release_date:
@@ -195,11 +195,9 @@ def create_app(test_config=None):
         except Exception:
             db.session.rollback()
             print(exc_info())
-            error = True
+            abort(404)
         finally:
             db.session.close()
-            if error:
-                abort(500)
 
     # update existing actor with <id>
     @app.route("/actors/<actor_id>", methods=['PATCH'])
@@ -208,15 +206,15 @@ def create_app(test_config=None):
         data = request.json
 
         # get actor with spesific <id>
-        actor = Actors.query.get(actor_id)
-        if not actor:
-            abort(404)
 
         name = data.get("name", None)
         age = data.get("age", None)
         gender = data.get("gender", None)
 
         try:
+            actor = Actors.query.get(actor_id)
+            if not actor:
+                abort(404)
             if name:
                 actor.name = name
             if age:
@@ -233,14 +231,11 @@ def create_app(test_config=None):
         except Exception:
             db.session.rollback()
             print(exc_info())
-            error = True
+            abort(404)
         finally:
             db.session.close()
-            if error:
-                abort(500)
 
     # Error Handlers
-
     @app.errorhandler(404)
     def not_found(error):
         return jsonify({
