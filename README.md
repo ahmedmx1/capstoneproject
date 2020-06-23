@@ -11,7 +11,7 @@ The application performs the following functions:
 # Getting started
 
 - Casting Agency API is hosted on heroku
-- **Base URL**: [localhost:5000/](localhost:5000/)
+- **Base URL**: [localhost:5000/](http://localhost:5000/)
 
 - API has an Authentication managed by Auth0
 
