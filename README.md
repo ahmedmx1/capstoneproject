@@ -26,10 +26,33 @@ The application performs the following functions:
     "message": "bad request"
 }
 ```
-#### API will handle there errors:
+#### API will handle these errors:
 - **400** bad request
 - **404** resources not found
 - **422** unprocessable
 - **500** Internal Server error
 
-# 
+# Endpoints
+
+### GET /actors
+
+
+### GET /movies
+
+
+### POST /actors
+
+
+### POST /movies
+
+
+### DELETE /actors
+
+
+### DELETE /movies
+
+
+### PATCH /actors
+
+
+### PATCH /movies
