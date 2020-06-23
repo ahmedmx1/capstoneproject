@@ -59,12 +59,51 @@ The application performs the following functions:
 
 
 ### GET /movies
+- returns list of movies and success value
+- sample `curl -X GET http://localhost:5000/movies`
+
+```
+{
+    "movies": [
+        {
+            "title": "movie 1",
+            "release_date": "1-1-2020"
+        }, 
+        {
+            "title": "movie 2",
+            "release_date": "1-1-2020"
+        }
+    ], 
+    "success": True
+}
+```
 
 
 ### POST /actors
+- takes JSON object as an argument like : `{"name": "actor name", "age": "15", "gender": "male"}`
+- returns the ID of the created actor
+- sample `curl -X POST http://localhost:5000/actors -H "Content-Type:application/json" -d '{"name": "actor name", "age": "15", "gender": "male"}'`
+
+```
+{
+    "success": True,
+    "actor": 1
+}
+```
+
 
 
 ### POST /movies
+- takes JSON object as an argument like : `{"title": "movie 1", "release_date": "1-1-2020"}`
+- returns the ID of the created movie
+- sample `curl -X POST http://localhost:5000/movies -H "Content-Type:application/json" -d '{"title": "movie 1", "release_date": "1-1-2020"}'`
+
+```
+{
+    "success": True,
+    "movie": 1
+}
+```
 
 
 ### DELETE /actors
