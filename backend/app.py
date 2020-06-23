@@ -240,23 +240,23 @@ def create_app(test_config=None):
     def not_found(error):
         return jsonify({
           "success": False,
-          "status code": 404,
+          "error": 404,
           "message": "Sorry, resource unavailable"
         }), 404
 
     @app.errorhandler(422)
     def unproccesable(error):
         return jsonify({
-          'success': False,
-          'error': 422,
-          'message': "Sorry, request cannot be processed"
+          "success": False,
+          "error": 422,
+          "message": "Sorry, request cannot be processed"
         }), 422
 
     @app.errorhandler(400)
     def bad_request(error):
         return jsonify({
           "success": False,
-          "status code": 400,
+          "error": 400,
           "message": "Sorry, Bad request"
         }), 400
 
@@ -264,7 +264,7 @@ def create_app(test_config=None):
     def server_error(error):
         return jsonify({
           "success": False,
-          "status code": 500,
+          "error": 500,
           "message": "Internal Server error"
         }), 500
 
