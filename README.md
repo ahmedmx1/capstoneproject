@@ -40,6 +40,8 @@ The application performs the following functions:
 
 - returns list of actors and success value
 - sample `curl ![URL]`
+- url is ![URL]
+- url is [URL]
 
 ```
 
