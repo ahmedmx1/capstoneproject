@@ -10,8 +10,6 @@ The application performs the following functions:
 
 # Getting started
 
-[URL]:[http://localhost:5000]
-
 - Casting Agency API is hosted on heroku
 - **Base URL**: [localhost:5000/](http://localhost:5000/)
 
@@ -39,12 +37,24 @@ The application performs the following functions:
 ### GET /actors
 
 - returns list of actors and success value
-- sample `curl ![URL]`
-- url is ![URL]
-- url is [URL]
+- sample `curl -X GET http://localhost:5000/actors`
 
 ```
-
+{
+    "actors": [
+        {
+            "name": "actor name",
+            "age": "15",
+            "gender": "male"
+        }, 
+        {
+            "name": "actor name 2",
+            "age": "15",
+            "gender": "male"
+        }
+    ], 
+    "success": True
+}
 ```
 
 
