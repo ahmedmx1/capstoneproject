@@ -40,7 +40,7 @@ def create_app(test_config=None):
 
     # get all movies
     @app.route('/movies', methods=['GET'])
-    @requires_auth('get:movies')
+    # @requires_auth('get:movies')
     def show_movies():
         error = False
         try:
@@ -63,7 +63,7 @@ def create_app(test_config=None):
 
     # get all actors
     @app.route('/actors', methods=['GET'])
-    @requires_auth('get:actors')
+    # @requires_auth('get:actors')
     def show_actors():
         error = False
         try:
@@ -86,7 +86,7 @@ def create_app(test_config=None):
 
     # add new movie
     @app.route("/movies", methods=['POST'])
-    @requires_auth('post:movies')
+    # @requires_auth('post:movies')
     def add_movies():
         data = request.json
         try:
@@ -114,7 +114,7 @@ def create_app(test_config=None):
 
     # add new actor
     @app.route('/actors', methods=['POST'])
-    @requires_auth('post:movies')
+    # @requires_auth('post:movies')
     def add_actors():
         data = request.json
         try:
@@ -142,13 +142,8 @@ def create_app(test_config=None):
 
     # delete movie with <id>
     @app.route("/movies/<movie_id>", methods=['DELETE'])
-<<<<<<< HEAD
-    @requires_auth('delete:movies')
-    def delete_movies(movie_id):
-=======
     # @requires_auth('delete:movies')
-    def delete_movies(movie_id, *args, **kwargs):
->>>>>>> 8e3297ede204c05952bc44e6bffdde3d22f55801
+    def delete_movies(movie_id):
         try:
             movie = Movies.query.get(movie_id)
             if movie:
@@ -169,13 +164,8 @@ def create_app(test_config=None):
 
     # delete actor with <id>
     @app.route("/actors/<actor_id>", methods=['DELETE'])
-<<<<<<< HEAD
-    @requires_auth('delete:actors')
-    def delete_actors(actor_id):
-=======
     # @requires_auth('delete:actors')
-    def delete_actors(actor_id, *args, **kwargs):
->>>>>>> 8e3297ede204c05952bc44e6bffdde3d22f55801
+    def delete_actors(actor_id):
         try:
             actor = Actors.query.get(actor_id)
             if actor:
@@ -196,13 +186,8 @@ def create_app(test_config=None):
 
     # update existing movie with <id>
     @app.route("/movies/<movie_id>", methods=['PATCH'])
-<<<<<<< HEAD
-    @requires_auth('patch:movies')
-    def update_movies(movie_id):
-=======
     # @requires_auth('patch:movies')
-    def update_movies(movie_id, *args, **kwargs):
->>>>>>> 8e3297ede204c05952bc44e6bffdde3d22f55801
+    def update_movies(movie_id):
         error = False
         data = request.json
 
@@ -234,13 +219,8 @@ def create_app(test_config=None):
 
     # update existing actor with <id>
     @app.route("/actors/<actor_id>", methods=['PATCH'])
-<<<<<<< HEAD
-    @requires_auth('patch:actors')
-    def update_actors(actor_id):
-=======
     # @requires_auth('patch:actors')
-    def update_actors(actor_id, *args, **kwargs):
->>>>>>> 8e3297ede204c05952bc44e6bffdde3d22f55801
+    def update_actors(actor_id):
         error = False
         data = request.json
 

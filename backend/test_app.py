@@ -23,7 +23,7 @@ class CapstonProjectTestCase(unittest.TestCase):
 
         self.new_actor = Actors(
             name="new actor",
-            age="15",
+            age=15,
             gender="male"
         )
 
@@ -53,7 +53,7 @@ class CapstonProjectTestCase(unittest.TestCase):
     def test_add_new_actor(self):
         newActor = {
             "name":"new actor",
-            "age":"15",
+            "age":15,
             "gender":"male"
         }
         res = self.client().post('/actors', json=newActor)
@@ -95,7 +95,7 @@ class CapstonProjectTestCase(unittest.TestCase):
         self.assertEqual(res.status_code, 422)
     
     def test_delete_actor(self):
-        newActor = Actors(name="new actor", age="15", gender="male")
+        newActor = Actors(name="new actor", age=15, gender="male")
         newActor.insert()
         actor_id = newActor.id
 
@@ -133,7 +133,7 @@ class CapstonProjectTestCase(unittest.TestCase):
         self.assertEqual(res.status_code, 404)
     
     def test_update_actor(self):
-        newActor = Actors(name="new actor", age="15", gender="male")
+        newActor = Actors(name="new actor", age=15, gender="male")
         newActor.insert()
         actor_id = newActor.id
 
