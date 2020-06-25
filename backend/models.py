@@ -3,7 +3,7 @@ import json
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import Column, String, Integer
 
-database_name = "testcasting2"
+database_name = "casting"
 database_path = "postgres://{}/{}".format('postgres:1234@localhost:5432', database_name)
 
 
