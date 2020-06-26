@@ -10,8 +10,8 @@ from models import db
 
 # app.config["SQLALCHEMY_DATABASE_URI"] = database_path
 # app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-# db.app = app
-# db.init_app(app)
+db.app = app
+db.init_app(app)
 
 migrate = Migrate(app, db)
 manager = Manager(app)
