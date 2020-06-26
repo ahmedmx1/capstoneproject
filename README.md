@@ -198,9 +198,11 @@ flask run
 # Testing
 To run the tests, run
 
+```
 dropdb casting
 createdb casting
 python test_app.py
+```
 
 # Deployment
 
