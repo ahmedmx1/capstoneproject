@@ -206,5 +206,5 @@ python test_app.py
 
 # Deployment
 
-App is deployed on this [link](http://localhost:5000/)
+App is deployed on this [link](https://capproject.herokuapp.com/)
 
