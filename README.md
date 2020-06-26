@@ -4,16 +4,41 @@ Casting Agency is a service that is responsible for creating movies and managing
 
 The application performs the following functions:
 - Showing existing actors and movies, creating actors and movies, editing actors and movies data, delete actors and movies.
-- **Casting Assistant** can view actors and movies.
-- **Casting Director** has all permissions of Casting Assistant, add or delete an actor from the database and modify actors or movies.
-- **Executive Producer** has all permissions of Casting Director and add or delete a movie from the database.
+
 
 # Getting started
 
-- Casting Agency API is hosted on heroku
-- **Base URL**: [localhost:5000/](http://localhost:5000/)
+#### Installing Dependencies
+Python 3.7
+Follow instructions to install the latest version of python for your platform in the python docs
 
-- API has an Authentication managed by Auth0
+#### PIP Dependencies
+Once you have your virtual environment setup and running, install dependencies by running:
+
+`pip install -r requirements.txt`
+This will install all of the required packages we selected within the requirements.txt file.
+
+
+##### after running the server you can test endpoints localy
+
+- **Base URL :** [localhost:5000/](http://localhost:5000/)
+
+- API has an Authentication and has three users. Each has his own token which are provided in setup.sh file
+    - **Casting Assistant** can view actors and movies.
+    - **Casting Director** has all permissions of Casting Assistant, add or delete an actor from the database and modify actors or movies.
+    - **Executive Producer** has all permissions of Casting Director and add or delete a movie from the database.
+
+# Running the server
+
+To run the server, execute:
+
+```
+source setup.sh
+export FLASK_APP=app.py
+export FLASK_ENV=development
+flask run
+```
+
 
 # Error Handling
 
@@ -39,7 +64,7 @@ The application performs the following functions:
 ### GET /actors
 
 - returns list of actors and success value
-- sample `curl -X GET http://localhost:5000/actors`
+- sample `curl -X GET http://localhost:5000/actors -H "Authorization: Bearer mytoken123"'`
 
 ```
 {
@@ -62,7 +87,7 @@ The application performs the following functions:
 
 ### GET /movies
 - returns list of movies and success value
-- sample `curl -X GET http://localhost:5000/movies`
+- sample `curl -X GET http://localhost:5000/movies -H "Authorization: Bearer mytoken123"'`
 
 ```
 {
@@ -169,3 +194,15 @@ The application performs the following functions:
     }
 }
 ```
+
+# Testing
+To run the tests, run
+
+dropdb casting
+createdb casting
+python test_app.py
+
+# Deployment
+
+App is deployed on this [link](http://localhost:5000/)
+
