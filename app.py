@@ -315,4 +315,4 @@ def create_app(test_config=None):
 APP = create_app()
 
 if __name__ == '__main__':
-    APP.run(host='https://capproject.herokuapp.com', port='8080')
+    APP.run(host='0.0.0.0', port='21922')
