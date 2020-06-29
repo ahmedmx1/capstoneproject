@@ -1,7 +1,7 @@
 from flask_script import Manager
 from flask_migrate import Migrate, MigrateCommand
 
-from app import APP
+from app import app
 from models import db
 
 # database_name = "casting"
@@ -13,8 +13,8 @@ from models import db
 # db.app = app
 # db.init_app(app)
 
-migrate = Migrate(APP, db)
-manager = Manager(APP)
+migrate = Migrate(app, db)
+manager = Manager(app)
 
 manager.add_command('db', MigrateCommand)
 
