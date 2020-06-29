@@ -206,5 +206,5 @@ python test_app.py
 
 # Deployment
 
-App is deployed on this [link](https://capproject.herokuapp.com/)
+App is deployed on this [link](https://fsndcap.herokuapp.com/)
 
