@@ -11,4 +11,3 @@ export producer_token=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjFYeVB6cHFtOT
 export DATABASE_URL='postgres://yqgtcgyqeopzwh:6c0bf32519debf3f20cbcf9d29017316f6d8fadbde58721a0b462b2b9f629925@ec2-34-206-31-217.compute-1.amazonaws.com:5432/d77bn7d6q8g0le'
 export FLASK_APP=app.py
 export FLASK_DEBUG=true
-flask run --reload
