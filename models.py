@@ -8,7 +8,8 @@ database_name = "casting"
 # postgres://cpkiytpbuggisp:a8f2fcdd4388380ae7a6d6b2cf7f8dd4450218f5c9d50ae349f784a2c8d00c88@ec2-54-234-28-165.compute-1.amazonaws.com:5432/d8s7jscd01cvvq
 # database_path = "postgres://cpkiytpbuggisp:a8f2fcdd4388380ae7a6d6b2cf7f8dd4450218f5c9d50ae349f784a2c8d00c88@ec2-54-234-28-165.compute-1.amazonaws.com:5432/d8s7jscd01cvvq"
 
-database_path = os.enrviron['DATABASE_URL']
+database_path = os.environ['DATABASE_URL']
+
 
 db = SQLAlchemy()
 
