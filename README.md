@@ -61,10 +61,12 @@ flask run
 
 # Endpoints
 
+**make sure to run `source setup.sh` before testing endpoints, to define environment variables**
+
 ### GET /actors
 
 - returns list of actors and success value
-- sample `curl -X GET http://localhost:5000/actors -H "Authorization: bearer mytoken123"'`
+- sample `curl -X GET http://localhost:5000/actors -H "Authorization: bearer $assistant_token"'`
 
 ```
 {
@@ -87,7 +89,7 @@ flask run
 
 ### GET /movies
 - returns list of movies and success value
-- sample `curl -X GET http://localhost:5000/movies -H "Authorization: bearer mytoken123"'`
+- sample `curl -X GET http://localhost:5000/movies -H "Authorization: bearer $assistant_token"'`
 
 ```
 {
@@ -110,7 +112,7 @@ flask run
 - takes JSON object as an argument like : `{"name": "actor name", "age": "15", "gender": "male"}`
 - takes authorization header argument in the request
 - returns the ID of the created actor and success value
-- sample `curl -X POST http://localhost:5000/actors -H "Content-Type:application/json" -d '{"name": "actor name", "age": "15", "gender": "male"} -H "Authorization: bearer mytoken123"'`
+- sample `curl -X POST http://localhost:5000/actors -H "Content-Type:application/json" -d '{"name": "actor name", "age": "15", "gender": "male"} -H "Authorization: bearer $director_token"'`
 
 ```
 {
@@ -125,7 +127,7 @@ flask run
 - takes JSON object as an argument like : `{"title": "movie 1", "release_date": "1-1-2020"}`
 - takes authorization header argument in the request
 - returns the ID of the created movie and success value
-- sample `curl -X POST http://localhost:5000/movies -H "Content-Type:application/json" -d '{"title": "movie 1", "release_date": "1-1-2020"} -H "Authorization: bearer mytoken123"'`
+- sample `curl -X POST http://localhost:5000/movies -H "Content-Type:application/json" -d '{"title": "movie 1", "release_date": "1-1-2020"} -H "Authorization: bearer $producer_token"'`
 
 ```
 {
@@ -138,7 +140,7 @@ flask run
 ### DELETE /actors/<actor_id>
 - takes authorization header argument in the request
 - returns id of deleted actor and success value
-- sample `curl -X DELETE http://localhost:5000/actors/1 -H "Authorization: bearer mytoken123"`
+- sample `curl -X DELETE http://localhost:5000/actors/1 -H "Authorization: bearer $director_token"`
 
 ```
 {
@@ -151,7 +153,7 @@ flask run
 ### DELETE /movies/<movie_id>
 - takes authorization header argument in the request
 - returns id of deleted movie and success value
-- sample `curl -X DELETE http://localhost:5000/movies/1 -H "Authorization: bearer mytoken123"`
+- sample `curl -X DELETE http://localhost:5000/movies/1 -H "Authorization: bearer $producer_token"`
 
 ```
 {
@@ -165,7 +167,7 @@ flask run
 - takes JSON object as an argument like: `{"name": "edited actor name"}`
 - takes authorization header argument in the request
 - returns edited actor and success value
-- sample `curl -X PATCH http://localhost:5000/actors/1 -H "Content-Type:application/json" -d '{"name": "edited actor name"}' -H "Authorization: bearer mytoken123"`
+- sample `curl -X PATCH http://localhost:5000/actors/1 -H "Content-Type:application/json" -d '{"name": "edited actor name"}' -H "Authorization: bearer $director_token"`
 
 ```
 {
@@ -183,7 +185,7 @@ flask run
 - takes JSON object as an argument like: `{"title": "edited movie title"}`
 - takes authorization header argument in the request
 - returns edited movie and success value
-- sample `curl -X PATCH http://localhost:5000/movies/1 -H "Content-Type:application/json" -d '{"title": "edited movie title"}' -H "Authorization: bearer mytoken123"`
+- sample `curl -X PATCH http://localhost:5000/movies/1 -H "Content-Type:application/json" -d '{"title": "edited movie title"}' -H "Authorization: bearer $director_token"`
 
 ```
 {
