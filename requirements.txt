@@ -52,7 +52,7 @@ python-jose==3.1.0
 pytz==2020.1
 PyYAML==5.3.1
 requests==2.23.0
-rsa==3.4.2
+rsa==4.7
 s3transfer==0.3.3
 sh==1.13.1
 shellescape==3.8.1
