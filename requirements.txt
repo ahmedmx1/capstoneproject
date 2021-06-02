@@ -62,7 +62,7 @@ sudo==1.0.0
 tabulate==0.8.7
 toml==0.10.0
 twilio==6.40.0
-urllib3==1.25.9
+urllib3==1.26.5
 wcwidth==0.2.3
 Werkzeug==1.0.1
 wrapt==1.11.1
