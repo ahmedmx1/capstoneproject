@@ -23,7 +23,7 @@ gunicorn==20.0.4
 idna==2.9
 isort==4.3.21
 itsdangerous==1.1.0
-Jinja2==2.11.2
+Jinja2==3.1.4
 jmespath==0.10.0
 jp==0.2.4
 lazy-object-proxy==1.4.0
